@@ -10,10 +10,18 @@ class TestMathOperations(unittest.TestCase):
     def test_add_positive_numbers(self):
         self.assertEqual(self.math_operations.add(1, 2), 3)
         self.assertEqual(self.math_operations.add(-2, -3), -5)
+        with self.assertRaises(ValueError):
+            self.math_operations.mul(True, 0)
+        with self.assertRaises(ValueError):
+            self.math_operations.mul("omer",5)
     
     def test_subtract_numbers(self):
         self.assertEqual(self.math_operations.sub(9, 8),1)
         self.assertEqual(self.math_operations.sub(-5, -5), 0)
+        with self.assertRaises(ValueError):
+            self.math_operations.mul(True, 0)
+        with self.assertRaises(ValueError):
+            self.math_operations.mul("omer",5)
     
     def test_multiply_numbers(self):
         self.assertEqual(self.math_operations.mul(5, 10), 50)
@@ -28,3 +36,7 @@ class TestMathOperations(unittest.TestCase):
         self.assertEqual(self.math_operations.div(10,2),5)
         with self.assertRaises(ZeroDivisionError):
             self.assertEqual(self.math_operations.div(10,0))
+        with self.assertRaises(ValueError):
+            self.math_operations.mul(True, 0)
+        with self.assertRaises(ValueError):
+            self.math_operations.mul("omer",5)
