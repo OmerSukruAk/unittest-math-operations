@@ -26,6 +26,6 @@ class Math_Operations:
         return a*b
 
     def div(self, a, b):
-        self.divbyzero(a, b)
         self.isitnum(a, b)
+        self.divbyzero(a, b)
         return a/b
